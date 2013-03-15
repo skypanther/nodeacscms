@@ -1,0 +1,52 @@
+<% include header %>
+<% include navigation %>
+
+<div class="container wrapper">
+    <div class="row">
+
+        <div class="span9 content">
+        
+            <div class="banner">
+                <h2>Welcome back, <% if( user.firstname !== undefined && user.firstname !==""){ %> <%=user.firstname%> <% } else { %> <%=user.email%> <% } %>!</h2>
+                <p>The technical win starts here!</p>
+            </div>
+
+            <h3>Application Setup Wizard</h3>
+              
+            <div class="well display stats">
+                <div class="row-fluid">
+                    <div class="span3">
+                        <a href="users/?setupDummyAccounts=1" class="btn btn-primary">1. Setup User Accounts</a>
+                    </div>
+                    <div class="span3">
+                        
+                    </div>
+                    <div class="span3">
+                        
+                    </div>
+                    <div class="span3">
+                        
+                    </div>
+                </div>
+            </div>
+
+ 
+
+ 
+
+  
+ 
+            
+        </div><!--/span9-->
+    </div><!--/row-->
+    
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2012</p>
+    </footer>
+    
+</div> <!-- /container wrapper -->
+
+
+<% include footer %>

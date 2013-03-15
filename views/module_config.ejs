@@ -1,0 +1,41 @@
+
+<% include header %>
+<% include navigation %>
+
+
+<div class="container wrapper">
+    <div class="row">
+	
+	<% include sidebar %>
+		
+        <div class="span9 content">
+        	 <div class="banner">
+                <h2><%=module.module_name%></h2>
+            </div>
+        
+
+	  		<div class="display">
+	  			<span class="labelEqualizer"><div class="label">Login URL</div></span><div class="editBox" id="username" contentEditable="<%=edit%>"><%=module.loginUrl %></div><br/><br/>
+	  			<span class="labelEqualizer"><div class="label">Client Id</div></span><div class="editBox" id="email" contentEditable="<%=edit%>"><%=module.clientId %></div><br/><br/>
+	  			<span class="labelEqualizer"><div class="label">Client Secret</div></span><div class="editBox" id="role" contentEditable="<%=edit%>"><%=module.clientSecret %></div><br/><br/>
+	  			<span class="labelEqualizer"><div class="label">Redirect URI</div></span><div class="editBox" id="role" contentEditable="<%=edit%>"><%=module.redirectUri %></div><br/><br/>
+	  			<span class="labelEqualizer"><div class="label">API Version</div></span><div class="editBox" id="role" contentEditable="<%=edit%>"><%=module.apiVersion %></div><br/><br/>
+	  			<br/>
+	  			<br/>
+	  			 <a href="users/?setupDummyAccounts=1" class="btn btn-primary">Save Module Settings</a>
+
+	  		</div>
+	        
+        </div><!--/span9-->
+    </div><!--/row-->
+    
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2012</p>
+    </footer>
+    
+</div> <!-- /container wrapper -->
+
+
+<% include footer %>

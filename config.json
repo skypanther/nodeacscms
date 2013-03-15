@@ -1,0 +1,25 @@
+{
+  "routes":
+  [
+    { "path": "/", "method":"post", "callback": "application#indexpost" },
+    { "path": "/", "method":"get", "callback": "application#index" },
+    { "path": "/logout", "method":"get", "callback": "application#logout" },
+    { "path": "/home", "callback": "application#home" },
+    { "path": "/users", "method": "get", "callback":"users#getUsers" },
+    { "path": "/user", "method": "get", "callback":"users#show" },
+    { "path": "/news", "method": "get", "callback":"news#getNews" },
+    { "path": "/article", "method": "get", "callback":"news#show" },
+    { "path": "/api/v1/time", "callback": "api#timedisplay" },
+    { "path": "/module/config", "callback":"module_config#init"},
+    { "path": "*", "method":"get", "callback":"application#errorpage"},
+    { "path": "/api/stocks", "method":"get", "callback":"stocks#getStockQuotes"}
+  ],
+  "filters":
+  [
+  	{ "path": "user", "method":"get", "callback": "session_filter#validateSession" }
+  ],
+  "websockets":
+  [
+  	{ "event": "", "callback": ""}
+  ]
+}

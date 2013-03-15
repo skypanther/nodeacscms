@@ -1,0 +1,16 @@
+{
+	"fields":[
+		{"name":"first_name", "label": "First Name", "type":"string"},
+		{"name":"last_name", "label": "Last Name", "type":"string"},
+		{"name":"username", "label": "Username", "type":"string"},
+		{"name":"email", "label": "Email", "type":"string"},
+		{"name":"password", "label": "Password", "type":"string", "password":true},
+		{"name":"role", "label": "Role", "type":"dropdown", "values":["ADMIN", "STAFF", "SCOUT", "VOLUNTEER"]},
+		{"name":"organization", "label": "Organization", "type":"string"},
+		{"name":"admin", "label": "Admin", "type":"checkbox"}
+	],
+	"data":
+	[
+		{"first_name": "Tim", "last_name": "Poulsen", "username":"timpoulsen", "email": "tim@example.com", "role": "ADMIN", "admin":true, "password":"password", "custom_fields":{"organization":"Development"}}
+	]
+}

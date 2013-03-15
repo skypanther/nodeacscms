@@ -1,0 +1,60 @@
+<% include header %>
+<% include navigation %>
+
+<div class="container wrapper">
+    <div class="row">
+	
+	<% include sidebar %>
+		
+        <div class="span9 content">
+        
+	        <div class="banner">
+	           	<h2>News Articles</h2>
+	        	<p>Manage the news articles you have published</p>
+	        </div>
+	        
+	        <table class="table" style="font-size: 12px;">
+	        	<thead>
+	        		<th>Date</th>
+	        		<th>Title</th>
+					<th style="text-align:right;"><a href="article/?add=true" class="btn btn-primary">Add</a></th>
+	        	</thead>
+	        	<tbody>
+           		<% for(var i=0; i< articles.length; i++) { %>
+           		<tr>
+           			<td><a href="article/?id=<%=articles[i].id %>"><script>document.write(moment("<%=articles[i].created_at%>").format("MMM D, YYYY, h:mm A"));</script></td>
+           			<td><%=articles[i].title %></td>
+           			<td style="text-align: right;">
+           				<a href="/article/?id=<%=articles[i].id %>">View</a> | 
+           				<a href="/article/?id=<%=articles[i].id %>&edit=true">Edit</a> | 
+           				<a href="/article/?id=<%=articles[i].id %>&delete=true">Delete</a>
+           			</td>
+           		</tr>
+           		<% } %>
+           		</tbody>
+           </table>
+           <div class="pagination-navbar">
+            Page: 
+            <% 
+              console.log("TotalPages: "+total_pages);
+              for(i=1; i <= total_pages; i++){
+                if (i === page) { %>
+                  <%=i %><% if (i !== total_pages) {%> | <% } %> 
+                <% } else { %> 
+                  <a href="/news/?page=<%=i %>"><%=i %></a><% if (i !== total_pages) {%> | <% } %> 
+                <% } %>
+            <% } %>
+           </div>
+        </div><!--/span9-->
+    </div><!--/row-->
+    
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2012</p>
+    </footer>
+    
+</div> <!-- /container wrapper -->
+
+
+<% include footer %>

@@ -1,0 +1,58 @@
+
+<% include header %>
+<% include navigation %>
+
+<script>
+
+function editMode(b){
+	var elems = document.getElementsByTagName('div'), i;
+    for (i in elems) {
+        if((' ' + elems[i].className + ' ').indexOf('editBox')
+                > -1) {
+            elems[i].contentEditable = b;
+        }
+    }
+}
+
+
+</script>
+
+
+<div class="container wrapper">
+    <div class="row">
+	
+	<% include sidebar %>
+		
+        <div class="span9 content">
+        	 <div class="banner">
+                <h2>Article Details</h2>
+            </div>
+        
+
+	  		<div class="display">
+	  			<h3><div class="editBox" contentEditable="<%=edit%>"><%=article.title%></div></h3>
+  				<div class="editBox"><script>document.write(moment("<%=article.updated_at%>").format("MMM D, YYYY, h:mm A"));</script></div>
+				<div>
+	  			<textarea id="content" class="textAreaBox" contentEditable="<%=edit%>"><%=article.content %></textarea>
+	  			<br/>
+	  			<br/>
+	  			<% if(edit === "true") { %>
+				<input type="file" title="Browse to upload an image"><br/><br/>
+	  			<a href="article/save" class="btn btn-primary">Save Article</a>
+	  			<% } %>
+				</div>
+	  		</div>
+	        
+        </div><!--/span9-->
+    </div><!--/row-->
+    
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2012</p>
+    </footer>
+    
+</div> <!-- /container wrapper -->
+
+
+<% include footer %>

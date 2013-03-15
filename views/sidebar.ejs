@@ -1,0 +1,34 @@
+<%  
+  var activeMenu1, activeMenu2, activeMenu3, activeMenu4,
+	  activeMenu5, activeMenu6, activeMenu7, activeMenu8;
+  switch(menu){
+	case 'users':
+		var activeMenu2 = 'active';
+	break;
+	case 'news':
+		var activeMenu3 = 'active';
+	break;
+	default: 
+		var activeMenu1 = 'active';
+	break;
+}
+%>
+ 
+<div class="span3">
+    <ul class="nav nav-tabs nav-stacked">
+        <li style="height:110px;"><img src="/images/appc-logo.png" alt="logo"/></li>
+        
+        <li class="<%= activeMenu1 %>"><a href="/home"><i class="icon icon-home"></i> Dashboard</a></li>
+        <li><a href="/logout"><i class="icon icon-signout"></i> Log out</a></li>
+    </ul><!--/nav-stacked menu-->
+
+	<h4>Admin</h4>
+    <ul class="nav nav-tabs nav-stacked">    
+		<li class="<%= activeMenu3 %>" ><a href="/news"><i class="icon icon-caret-right"></i>News</a></li>	  
+		<li class="<%= activeMenu2 %>" ><a href="/users"><i class="icon icon-caret-right"></i>Users</a></li>
+    </ul><!--/nav-stacked menu-->
+   
+
+ 
+</div><!--/span3 column-->
+

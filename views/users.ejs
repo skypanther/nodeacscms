@@ -1,0 +1,65 @@
+<% include header %>
+<% include navigation %>
+
+
+<div class="container wrapper">
+    <div class="row">
+	
+	<% include sidebar %>
+		
+        <div class="span9 content">
+        
+	        <div class="banner">
+	           	<h2>Users Management</h2>
+	        	<p>Manage user access for NodeACS CMS</p>
+	        </div>
+	        
+	        <table class="table" style="font-size: 12px;">
+	        	<thead>
+	        		<th><a href="/users?order=last_name">Name</a></th>
+	        		<th><a href="/users?order=email">Email</a></th>
+	        		<th><a href="/users?order=role">Role</a></th>
+              <th><a href="/users?order=organization">Organization</a></th>
+	        		<th style="text-align:right;"><a href="user/?add=true" class="btn btn-primary">Add</a></th>
+	        	</thead>
+	        	<tbody>
+           		<% for(var i=0; i< users.length; i++) { %>
+           		<tr>
+           			<td><a href="user/"><%=users[i].first_name %> <%=users[i].last_name %></td>
+           			<td><%=users[i].email %></td>
+           			<td><%=users[i].role %></td>
+                <td><%=users[i].custom_fields.organization %></td>
+           			<td style="text-align: center">
+           				<a href="/user/?email=<%=users[i].email %>">View</a> | 
+           				<a href="/user/?email=<%=users[i].email %>&edit=true">Edit</a> | 
+           				<a href="/user/?email=<%=users[i].email %>&delete=true">Delete</a>
+           			</td>
+           		</tr>
+           		<% } %>
+           		</tbody>
+           </table>
+           <div class="pagination-navbar">
+            Page: 
+            <% 
+              console.log("TotalPages: "+total_pages);
+              for(i=1; i <= total_pages; i++){
+                if (i === page) { %>
+                  <%=i %><% if (i !== total_pages) {%> | <% } %> 
+                <% } else { %> 
+                  <a href="/users/?page=<%=i %>"><%=i %></a><% if (i !== total_pages) {%> | <% } %> 
+                <% } %>
+            <% } %>
+           </div>
+        </div><!--/span9-->
+    </div><!--/row-->
+    
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2012</p>
+    </footer>
+    
+</div> <!-- /container wrapper -->
+
+
+<% include footer %>

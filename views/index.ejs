@@ -1,0 +1,41 @@
+<% include header %>
+<% include login-navigation %>
+
+<div class="container wrapper">
+    <div class="row">
+	      
+        <div class="row">
+            <br><br>
+            <div class="span4 offset4 well">
+                <img src="/images/appc-logo.png">
+                <hr>
+                <form class="form login-form" method="post" action="/">
+                    <label for="Email">Email:</label>
+                    <input class="span4"  name="email"  type="text" id="Email" placeholder="Email">
+
+                    <label for="Password">Password:</label>
+                    <input class="span4"  name="password"  type="password" id="Password" placeholder="Password">
+
+                    <label class="checkbox">
+                        <input type="checkbox" name="saveLogin"> Keep me logged in
+                    </label>
+                    <input type="submit" class="btn btn-success" value="Log in with email"/> 
+                    <hr>
+ 
+                </form>
+            </div><!--/span-->
+        </div>
+
+    
+    </div><!--/row-->
+    
+    <hr>
+
+    <footer>
+        <p>&copy; Company 2012</p>
+    </footer>
+    
+</div> <!-- /container wrapper -->
+
+
+<% include footer %>
